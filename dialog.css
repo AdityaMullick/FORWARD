@@ -1,0 +1,43 @@
+.ui-widget-overlay {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    cursor: wait;
+    background-color: #ffffff;
+    opacity: .01;
+    filter: Alpha(Opacity=1)/*{opacityOverlay}*/
+    ;
+}
+
+
+/*
+Workaround for horizontal scroll bar issue.
+http://bugs.jqueryui.com/ticket/3623 */
+
+.ui-widget-overlay {
+    _position: absolute;
+}
+
+.ui-dialog {
+    padding: 10px;
+    text-align: center;
+    width: 640px;
+    height: 480px;
+    overflow: hidden;
+    position: absolute;
+    background: #CCCCCC;
+    border: 1px dotted #000;
+    cursor: wait;
+    font-family: Helvetica, "Lucida Grande", Tahoma, Arial, Verdana, sans-serif;
+    background-image: url('ajax-loader.gif');
+    background-repeat: no-repeat;
+    background-position: center;
+    text-align: center;
+    z-index: 100;
+}
+
+.ui-button.ui-widget {
+    visibility: hidden;
+}
