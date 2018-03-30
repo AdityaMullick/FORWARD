@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
 
 
-  <script src="./index_files/require.js"></script>
+  <script src="require.js"></script>
   <style type="text/css">
     :root #content>#right>.dose>.dosesingle,
     :root #content>#center>.dose>.dosesingle {
@@ -30,15 +30,17 @@
         });
       });
   </script>
-  <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="main" src="./index_files/main.js"></script>
-  <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="domReady" src="./index_files/domReady.js"></script>
-  <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="dojo-library" src="./index_files/dojo-library.js"></script>
-  <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="google" src="./index_files/google.js"></script>
-  <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="/resource/edu/ucsd/forward/ace-2013-02-07/ace.js" src="./index_files/ace.js"></script>
-  <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="https://ajax.googleapis.com/ajax/libs/dojo/1.6.0/dojo/dojo.xd.js.uncompressed.js" src="./index_files/dojo.xd.js.uncompressed.js"></script>
+  <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="main" src="main.js"></script>
+  <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="domReady" src="domReady.js"></script>
+  <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="dojo-library" src="dojo-library.js"></script>
+  <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="google" src="google.js"></script>
+  <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="/resource/edu/ucsd/forward/ace-2013-02-07/ace.js" src="ace.js"></script>
+  <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="https://ajax.googleapis.com/ajax/libs/dojo/1.6.0/dojo/dojo.xd.js.uncompressed.js" src="uncompressed.js"></script>
   <link type="text/css" rel="stylesheet" href="dialog.css">
-  <script type="text/javascript" charset="utf-8" data-requirecontext="_" data-requiremodule="http://code.jquery.com/jquery-1.10.2.min.js" src="./index_files/jquery-1.10.2.min.js"></script>
-  <script type="text/javascript" charset="utf-8" data-requirecontext="_" data-requiremodule="http://code.jquery.com/jquery-migrate-1.2.1.js" src="./index_files/jquery-migrate-1.2.1.js"></script>
+  <script type="text/javascript" charset="utf-8" data-requirecontext="_" data-requiremodule="http://code.jquery.com/jquery-1.10.2.min.js" src="jquery-1.10.2.min.js"></script>
+  <script type="text/javascript" charset="utf-8" data-requirecontext="_" data-requiremodule="http://code.jquery.com/jquery-migrate-1.2.1.js" src="jquery-migrate-1.2.1.js"></script>
+  <script src="buttonHandler.js"></script>
+
   <link type="text/css" rel="stylesheet" href="heatmap.css">
   <style id="ace_editor">
     .ace_editor {
@@ -578,19 +580,19 @@
       background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAYAAACZgbYnAAAAE0lEQVQImWP4////f4bLly//BwAmVgd1/w11/gAAAABJRU5ErkJggg==") right repeat-y;
     }
   </style>
-  <script type="text/javascript" charset="utf-8" async="" data-requirecontext="page" data-requiremodule="order" src="./index_files/order.js"></script>
+  <script type="text/javascript" charset="utf-8" async="" data-requirecontext="page" data-requiremodule="order" src="order.js"></script>
   <title>Tutorial</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <link href="./index_files/tutorial.css" rel="stylesheet">
+  <link href="index.css" rel="stylesheet">
   <script></script>
   <script></script>
-  <script src="./index_files/mode-forward_html.js"></script>
-  <script src="./index_files/theme-chrome.js"></script>
-  <script src="./index_files/mode-sql.js"></script>
-  <script src="./index_files/theme-chrome.js"></script>
-  <script type="text/javascript" charset="utf-8" data-requirecontext="page" data-requiremodule="http://code.jquery.com/jquery-1.11.0.min.js" src="./index_files/jquery-1.11.0.min.js"></script>
-  <script type="text/javascript" charset="utf-8" data-requirecontext="page" data-requiremodule="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/bootstrap.min.js" src="./index_files/bootstrap.min.js"></script>
+  <script src="mode-forward_html.js"></script>
+  <script src="theme-chrome.js"></script>
+  <script src="mode-sql.js"></script>
+  <script src="theme-chrome.js"></script>
+  <script type="text/javascript" charset="utf-8" data-requirecontext="page" data-requiremodule="http://code.jquery.com/jquery-1.11.0.min.js" src="jquery-1.11.0.min.js"></script>
+  <script type="text/javascript" charset="utf-8" data-requirecontext="page" data-requiremodule="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/bootstrap.min.js" src="bootstrap.min.js"></script>
   <style id="ace-chrome">
     .ace-chrome .ace_gutter {
       background: #ebebeb;
@@ -759,13 +761,13 @@
           <div class="btn-group"><button xmlns="http://www.w3.org/1999/xhtml" class="btn btn-default dropdown-toggle" data-toggle="dropdown" style="width:100%" type="button">
                     Select Tutorial <span class="caret"></span></button>
             <ul class="dropdown-menu" role="menu">
-              <li class="active"><a><button type="button">01 - Simple Html</button></a></li>
-              <li class=""><a><button type="button">02 - Visual Units</button></a></li>
-              <li class=""><a><button type="button">03 - Dynamic Data</button></a></li>
-              <li class=""><a><button type="button">04 - User Input</button></a></li>
-              <li class=""><a><button type="button">05 - URL Parameters</button></a></li>
-              <li class=""><a><button type="button">06 - Faceted Browsing (Single Input)</button></a></li>
-              <li class=""><a><button type="button">07 - Faceted Browsing (Multiple Inputs)</button></a></li>
+              <li class="active"><a><button id = "simple"type="button">01 - Simple Html</button></a></li>
+              <li class=""><a><button id = "visual"type="button">02 - Visual Units</button></a></li>
+              <li class=""><a><button id = "dynamic" type="button">03 - Dynamic Data</button></a></li>
+              <li class=""><a><button id = "input" type="button">04 - User Input</button></a></li>
+              <li class=""><a><button id = "parameters" type="button">05 - URL Parameters</button></a></li>
+              <li class=""><a><button id = "singleBrowse" type="button">06 - Faceted Browsing (Single Input)</button></a></li>
+              <li class=""><a><button id = "multipleBrowse" type="button">07 - Faceted Browsing (Multiple Inputs)</button></a></li>
             </ul>
           </div><button type="button" class="btn btn-default">Next &#8594;</button></div>
       </div>
@@ -776,7 +778,7 @@
           <div class="pane">
             <div>
               <h3 class="pane-header">Tutorial</h3></div>
-            <div><iframe frameborder="0" seamless="" src="./index_files/01-simple-html.html"></iframe></div>
+            <div><iframe id="tutorialPane" frameborder="0" seamless="" src="http://forward.ucsd.edu/tutorial/01-simple-html.html"></iframe></div>
           </div>
         </div>
         <div class="row" id="output">
