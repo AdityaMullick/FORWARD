@@ -3,21 +3,21 @@ $(document).ready(function() {
     $("#tutorialPane").attr('src',"https://forward.ucsd.edu/tutorial/01-simple-html.html");
   });
   $("#visual").click(function() {
-    $("#tutorialPane").attr('src',"https://forward.ucsd.edu/tutorial/02-visual-unit.html");
+    $("#tutorialPane").attr('src',"visual.html");
   });
   $("#dynamic").click(function() {
-    $("#tutorialPane").attr('src',"https://forward.ucsd.edu/tutorial/03-dynamic-data.html");
+    $("#tutorialPane").attr('src',"dynamic.html");
   });
   $("#input").click(function() {
-    $("#tutorialPane").attr('src',"https://forward.ucsd.edu/tutorial/04-user-input.html");
+    $("#tutorialPane").attr('src',"user-input.html");
   });
   $("#parameters").click(function() {
-    $("#tutorialPane").attr('src',"https://forward.uscd.edu/tutorial/05-url-parameters.html");
+    $("#tutorialPane").attr('src',"");
   });
   $("#singleBrowse").click(function() {
-    $("#tutorialPane").attr('src',"https://forward.uscd.edu/tutorial/06-faceted-browsing-single-input.html");
+    $("#tutorialPane").attr('src',"");
   });
   $("#multipleBrowse").click(function() {
-    $("#tutorialPane").attr('src',"https://forward.ucsd.edu/tutorial/07-faceted-browsing-multiple-inputs.html");
+    $("#tutorialPane").attr('src',"");
   });
 });

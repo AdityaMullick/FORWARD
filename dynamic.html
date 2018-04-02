@@ -1,0 +1,83 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+            <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+    <title>FORWARD Tutorial</title>
+    <style type="text/css">
+        :root #content> #right> .dose> .dosesingle,
+        :root #content> #center> .dose> .dosesingle {
+            display: none !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <h2>Dynamic Data</h2>
+
+        <img src="../../img/tutorial/03-dynamic-data.png" width="400" height="265">
+
+        <p>Of course, real applications compute data dynamically instead of hard-coding constants. In FORWARD applications, the Unified Application State (UAS) is a virtual database which connects to different data sources, such as SQL databases. <strong>SQL++ queries</strong>,
+            which are extensions of standard SQL queries, read from the UAS and compute the page data, as illustrated by the next example.</p>
+
+        <h2>Use Case: Page with Dynamic Data</h2>
+
+        <p>This example shows an application that retrieves sales data from a SQL database, and visualizes them with HighCharts.</p>
+
+        <h3>Example Code</h3>
+
+        <p>On <tt>orders.source</tt>, the data source <code>orders</code> is specified to connect to a SQL database using parameters such as driver, host, port, database name, and authentication credentials.</p>
+
+        <p>On <tt>index.page</tt>, there are two <code>&lt;% for %&gt;</code> directives. The first <code>&lt;% for p in ... %&gt;</code> directive (lines 14-16) evaluates the SQL++ query <code>select * from orders.products</code> (which retrieves all products
+            from the SQL database), and the iterator variable <code>p</code> iterates over each tuple (i.e. row/record) of the result. The <code>primary key (product_id)</code> specifies the primary key of the result, which enables FORWARD to provide
+            automatic optimizations for incremental rendering.</p>
+
+        <p>The <code>&lt;% for %&gt;</code> directive instantiates its contents once for each value of <code>p</code>, thus there is one time series for each product. Also, the <code>&lt;%= ... %&gt;</code> (line 18) instantiates the result of its expression,
+            thus the legend name of each time series is the product name.</p>
+
+        <p>Likewise, the second <code>&lt;% for s in ... %&gt;</code> directive (lines 20-32) iterates over the total daily sales per product. Notice that the SQL++ query has condition <code>where product_ref = p.product_id</code>, such that the results
+            contain only sales of the product of the current iteration of <code>p</code>. Parameterizing the SQL++ query with the iterator variable <code>p</code> of an outer loop is one of the many SQL++ extensions over SQL.</p>
+
+        <p>Finally, each data point is instantiated with x-value as the sales date, and y-value as the total daily sales (lines 29-30).</p>
+
+        <h3>Key Feature</h3>
+        <p>We saw that one can produce dynamic pages by utilizing the FORWARD <code>&lt;% for %&gt;</code> directive. The <code>&lt;% for %&gt;</code> directive can appear anywhere in a page. We also saw that the SQL++ query associated with a <code>&lt;% for %&gt;</code>            directive can be parameterized by an outer query. We will see many more kinds of parameterization in the next use cases.</p>
+
+
+        <h3>Exercises</h3>
+        <ol>
+            <li>Show only sales that exceed a threshold. For example, add the following <code>having</code> clause below the <code>group by</code>:<pre>having   sum(amount) &gt; 1000
+</pre></li>
+            <li>Add a Y-axis plot line for the average daily sales across all products with the following:<pre>yaxis : {
+    plotlines : [
+        {
+            value       : &lt;%= cast((select avg(amount) from orders.sales_daily) as double) %&gt;,
+            color       : 'green',
+            dashstyle   : 'shortdash',
+            width       : 2
+        }
+    ]
+},
+
+</pre>
+            </li>
+        </ol>
+    </div>
+
+
+
+</body>
+
+</html>

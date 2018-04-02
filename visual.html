@@ -1,0 +1,80 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+            <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+    <title>FORWARD Tutorial</title>
+    <style type="text/css">
+        :root #content> #right> .dose> .dosesingle,
+        :root #content> #center> .dose> .dosesingle {
+            display: none !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <h2>Use Case: Visual Units</h2>
+
+        <p>Beyond simple HTML, a FORWARD page can render visualizations using <strong>visual units</strong>, such as charts and maps. This example shows a visual unit that visualizes time series data using the popular <a target="_blank" href="http://www.highcharts.com/demo">HighCharts</a>            JavaScript library.</p>
+
+        <h3>Example Code</h3>
+
+        <p>To render a visual unit on <tt>index.page</tt>, the <code>&lt;% unit %&gt;</code> directive (lines 8-36) encloses the visual unit's <strong>data</strong>, such as the chart type, X-axis title and the time series for Phones sales. Data are represented
+            with SQL++, which is an extension of <a target="_blank" href="http://www.json.org/">JSON</a>.</p>
+
+        <h3>Key Feature</h3>
+
+        <p>Notice that the visual unit automatically translates between SQL++ data and the underlying HighStock component. No JavaScript code is necessary to integrate the JavaScript component into the page!</p>
+
+        <p>The <a target="_blank" href="/visual_units">visual units documentation</a> describes the SQL++ data attributes supported by respective visual units.
+
+        </p>
+        <h3>Exercises</h3>
+        <ol>
+            <li>Add the SQL++ data for a Y-axis title. For example:<pre>yAxis : {
+    title : {
+        text : 'Total'
+    }
+},
+</pre></li>
+            <li>Add the SQL++ data for a second product. For example:<pre>{
+    name : 'Tablet',
+    data : [
+        {
+            // Epoch time for 2014-01-01
+            x : 1388534400000,
+            y : 401
+        },
+        {
+            // Epoch time for 2014-01-02
+            x : 1388620800000,
+            y : 658
+        },
+        {
+            // Epoch time for 2014-01-03
+            x : 1388707200000,
+            y : 740
+        }
+    ]
+}
+</pre></li>
+        </ol>
+    </div>
+
+
+
+</body>
+
+</html>
